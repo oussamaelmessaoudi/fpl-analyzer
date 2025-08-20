@@ -7,15 +7,24 @@ public class FplStats {
     private int bestSeasonRank;
     private int seasonsPlayed;
     private String bestSeasonName;
+    private double averageRank;
 
-    public FplStats(String managerName,int currentRank, int bestSeasonRank, int seasonsPlayed, String bestSeasonName) {
+    public FplStats(String managerName,int currentRank, int bestSeasonRank, int seasonsPlayed, String bestSeasonName, double averageRank) {
         this.managerName = managerName;
         this.currentRank = currentRank;
         this.bestSeasonRank = bestSeasonRank;
         this.seasonsPlayed = seasonsPlayed;
         this.bestSeasonName = bestSeasonName;
+        this.averageRank = averageRank;
     }
 
+    public double getAverageRank() {
+        return averageRank;
+    }
+
+    public void setAverageRank(double averageRank) {
+        this.averageRank = averageRank;
+    }
     public String getManagerName() {
         return managerName;
     }

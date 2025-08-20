@@ -19,6 +19,7 @@ public class FplService {
 
 
     public FplStats getStats(int userId) {
+        int sumOfRanks=0;
         JSONObject summary = fplApiClient.fetchUserSummary(userId);
         JSONObject history = fplApiClient.fetchUserHistory(userId);
 
@@ -34,6 +35,7 @@ public class FplService {
             for(int i = 0;i < seasons.length();i++){
                 JSONObject season = seasons.optJSONObject(i);
                 int rank = season.optInt("rank");
+                sumOfRanks += rank;
                 if(rank < bestSeasonRank){
                     bestSeasonRank = rank;
                     bestSeasonName = season.optString("season_name");
@@ -45,6 +47,6 @@ public class FplService {
             bestSeasonName = "Not Found";
         }
 
-        return new FplStats(managerName,currentRank,bestSeasonRank,seasonsPlayed,bestSeasonName);
+        return new FplStats(managerName,currentRank,bestSeasonRank,seasonsPlayed,bestSeasonName,(double) sumOfRanks/seasonsPlayed);
     }
 }
