@@ -22,7 +22,7 @@ public class FplService {
     public FplService(FplApiClient fplApiClient) {
         this.fplApiClient = fplApiClient;
     }
-    /*After enabling the chaching in the service layer, the result of the id searched will stored in the cached and will the the id as key
+    /*After enabling the chaching in the service layer, the result of the id searched will stored in the cache "fplStats" and will the the id as key
     * if the user asks for the stats of the same id the application will not request rom the API again but it will return
     * the cached stats of the same id*/
     @Cacheable("fplStats")
