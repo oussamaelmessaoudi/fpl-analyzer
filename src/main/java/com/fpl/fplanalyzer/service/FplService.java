@@ -7,6 +7,7 @@ import com.fpl.fplanalyzer.model.FplStats;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,8 +22,10 @@ public class FplService {
     public FplService(FplApiClient fplApiClient) {
         this.fplApiClient = fplApiClient;
     }
-
-
+    /*After enabling the chaching in the service layer, the result of the id searched will stored in the cached and will the the id as key
+    * if the user asks for the stats of the same id the application will not request rom the API again but it will return
+    * the cached stats of the same id*/
+    @Cacheable("fplStats")
     public FplStats getStats(int userId)  {
 
         int sumOfRanks=0;
