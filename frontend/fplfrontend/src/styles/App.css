@@ -1,0 +1,89 @@
+.page-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  z-index: 1;
+}
+.form-row{
+  display: flex;
+  gap: 10px; 
+  width: 100%;
+}
+
+.input{
+  background-color: #1f2b44;
+  color: hsl(0, 0%, 89%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: inherit;
+  width: 100%;
+  font-weight: 400;
+  padding: 6px 6px;
+  border: 0;
+  border-radius: 2px;
+  border-style: solid;
+  min-width: 50px;
+}
+
+.button {
+  background-color: #cc9900d8;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: inherit;
+  width: 30%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.button:hover {
+  background-color: #e6b800;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-600px);
+  }
+}
+
+form.hidden {
+  animation: slideUpFade 1s ease forwards;
+}
+
+@keyframes haalandFadeUp {
+  0% {
+    opacity: 0.5;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-1000px);
+  }
+}
+
+.haaland-animate {
+  animation: haalandFadeUp 1s ease forwards;
+}
