@@ -1,5 +1,6 @@
 package com.fpl.fplanalyzer.controller;
 
+import com.fpl.fplanalyzer.exception.UserNotFoundException;
 import com.fpl.fplanalyzer.model.FplStats;
 import com.fpl.fplanalyzer.service.FplService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class FplController {
     }
 
     @GetMapping("/{id}")
-    public FplStats getStats(@PathVariable int id){
+    public FplStats getStats(@PathVariable int id) {
         return fplService.getStats(id);
     }
 

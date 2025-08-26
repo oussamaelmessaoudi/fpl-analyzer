@@ -84,6 +84,110 @@ form.hidden {
   }
 }
 
+.stats{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  gap: 1rem;
+  width: 90%;
+}
+
 .haaland-animate {
   animation: haalandFadeUp 1s ease forwards;
 }
+
+.full-head{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-bottom: 20px;
+  top: 5px;
+  left: 20px;
+}
+.full-head h1{
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  left: 0px;
+  font-weight: normal;
+}
+.stats-head{
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.stats-head h2{
+  color: white;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.circle-button {
+  top: 100px;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: #1f2b44; 
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.circle-button:hover {
+  background-color: #0056b3;
+}
+
+.stats-field{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.stats-field h2{
+  bottom: 200px;
+  color: white;
+  font-weight: 200;
+}
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+@keyframes stateFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-enter .stats-head{
+  animation: stateFadeDown 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.stats h1{
+  animation: stateFadeDown 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+.stats-enter .stats-field {
+  animation: stateFadeDown 0.8s ease-out forwards;
+  animation-delay: 0.12s;
+}
+
