@@ -69,9 +69,26 @@
   }
 }
 
-form.hidden {
-  animation: slideUpFade 1s ease forwards;
+@keyframes slideDownFade {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  0% {
+    opacity: 0;
+    transform: translateY(-600px);
+  }
 }
+
+form.hidden {
+  animation: slideUpFade 0.8s ease forwards;
+}
+
+form.normal {
+  animation: slideDownFade 0.8s ease backwards;
+}
+
+
 
 @keyframes haalandFadeUp {
   0% {
@@ -80,7 +97,18 @@ form.hidden {
   }
   100% {
     opacity: 0;
-    transform: translateX(-1000px);
+    transform: translateX(-300px);
+  }
+}
+
+@keyframes haalandFadeDown {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(0px);
   }
 }
 
@@ -97,7 +125,12 @@ form.hidden {
 }
 
 .haaland-animate {
-  animation: haalandFadeUp 1s ease forwards;
+  animation: haalandFadeUp 0.8s ease-in-out forwards;
+}
+
+.haaland-normal {
+  opacity: 0.8;
+  animation: haalandFadeDown 0.8s ease-in-out forwards;
 }
 
 .full-head{
@@ -167,14 +200,40 @@ form.hidden {
 }
 
 @keyframes stateFadeDown {
-  from {
+  0% {
     opacity: 0;
     transform: translateY(-200px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes stateFadeUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+}
+
+.stats-close .stats-head{
+  animation: stateFadeUp 0.8s ease-out forwards;
+  animation-delay: 0s;
+}
+
+.stats-close h1{
+  animation: stateFadeUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.stats-close .stats-field {
+  animation: stateFadeUp 0.8s ease-out forwards;
+  animation-delay: 0.1s;
 }
 
 .stats-enter .stats-head{
@@ -191,3 +250,111 @@ form.hidden {
   animation-delay: 0.12s;
 }
 
+.stats-body{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20rem;
+  width: 100%;
+  margin-left: 2%;
+  
+}
+
+.charts{
+  position: relative;
+  top: -50px;
+}
+
+@keyframes logoSlideUpFade {
+  0%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+}
+
+@keyframes logoSlideDownFade {
+  0%{
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+.logo-slide-up {
+  animation: logoSlideUpFade 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+.logo-normal{
+  opacity: 1;
+  animation: logoSlideDownFade 0.8s cubic-bezier(0.4,0,0.2,1) backwards;
+}
+
+@keyframes backgroundPlayerEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 0.50;
+    transform: translateX(0);
+  }
+  
+}
+
+@keyframes backgroundPlayerNormal {
+  0% {
+    opacity: 0.50;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  
+}
+
+.background-player-enter {
+  animation: backgroundPlayerEnter 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+.background-player-normal {
+  opacity: 0.50;
+  animation: backgroundPlayerNormal 0.8s cubic-bezier(0.4,0,0.2,1) backwards;
+}
+
+@keyframes chartEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(600px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+
+@keyframes chartNormal {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  
+}
+
+.chart-enter {
+  animation: chartEnter 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+.chart-normal {
+  animation: chartNormal 0.8s cubic-bezier(0.4,0,0.2,1) backwards;
+}
