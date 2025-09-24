@@ -15,6 +15,13 @@ it was built using Spring Boot for Backend and React for Frontend.
 - Charts for ranks and total points
 - Clean UI to browse your team stats
 
+Also the backend is cacheable.
+
+This means if you requested the same FPL IF more than once, it first check the cache and only calls the official FPL API when needed.
+
+In this way we keep it fast and reducing the unnecessary API calls.
+
+
 ## Screenshots & Demo
 
 ### Test with cURL
