@@ -17,7 +17,7 @@ it was built using Spring Boot for Backend and React for Frontend.
 
 Also the backend is cacheable.
 
-This means if you requested the same FPL IF more than once, it first check the cache and only calls the official FPL API when needed.
+This means if you requested the same FPL ID more than once, it first check the cache and only calls the official FPL API when needed.
 
 In this way we keep it fast and reducing the unnecessary API calls.
 
