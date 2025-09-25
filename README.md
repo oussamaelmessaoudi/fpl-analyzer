@@ -30,7 +30,7 @@ In this way we keep it fast and reducing the unnecessary API calls.
 
 ### Quick Video Demo
 
-<video src="assets/Demp.mp4"></video>
+[watch the demo](assets/Demo.mp4)
 
 ## Tech Stack
 
